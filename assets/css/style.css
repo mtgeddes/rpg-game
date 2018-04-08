@@ -110,6 +110,8 @@ body {
     width: 450px;
     margin: auto;
     border-radius: 25px;
+    font-size: 72px;
+    text-align: center;
 }
 
 .box3 {

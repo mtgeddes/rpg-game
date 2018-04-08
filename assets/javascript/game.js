@@ -56,7 +56,7 @@ $(document).ready(function() {
     $(".attack").click(function() {
         
         if (kills.length === 3) {
-            $("#heroinfo").text("You win")
+            $(".box2").text("You win!")
             $("#enemyinfo").text("")
         }
         else if (hero[0].hp <= 0) {
@@ -82,7 +82,7 @@ $(document).ready(function() {
      
 
                 if (kills.length === 3) {
-                    $("#heroinfo").text("You win")
+                    $(".box2").text("You win!")
                     $("#enemyinfo").text("")
                 }
             }
