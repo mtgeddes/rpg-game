@@ -4,12 +4,14 @@
 //  
 
 $(document).ready(function() {
-
+    
     
     var p1 = {hp: 130, ap: 6, cAp: 8};
     var p2 = {hp: 20, ap: 6, cAp: 8};
     var p3 = {hp: 30, ap: 6, cAp: 8};
     var p4 = {hp: 40, ap: 6, cAp: 8};
+
+  
  
     var hero = []
     var enemy = []
@@ -21,7 +23,9 @@ $(document).ready(function() {
         hero[0].ap = hero[0].ap + 6
     }
 
-    $("button").click(function() {
+ 
+
+    $(".attack").click(function() {
         
         if (kills.length === 3) {
             $("#herohealth").text("You win")
@@ -113,5 +117,17 @@ $(document).ready(function() {
                 enemyHp();
             }
         }
+    })
+
+    $(".fightscene1").click(function() {
+        $("#wrapper").css({"background-image": 'url(assets/images/fire.gif)'});
+    })
+
+    $(".fightscene2").click(function() {
+        $("#wrapper").css({"background-image": 'url(assets/images/ship.gif)'});
+    })
+
+    $(".fightscene3").click(function() {
+        $("#wrapper").css({"background-image": 'url(assets/images/zen-temple-in-fall.gif)'});
     })
 })

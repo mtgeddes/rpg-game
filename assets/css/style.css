@@ -3,43 +3,71 @@ body {
     color: white;
 }
 
-.wrapper {
-    background-image: url();
+
+.fightscenes {
+    position: relative;
+    display: inline-block;
+    top: 60px;
+    left: 330px;
+    background-color: grey;
+    max-width: 295px;
+    padding: 20px;
+}
+
+#wrapper {
+    background-image: url("../images/fire.gif");
     background-repeat: no-repeat;
+    background-size: cover;
     margin: auto;
-    max-width: 1200px;
+    max-width: 1000px;
     width: 100%;
-    height: 675px;
+    height: 440px;
     position: relative;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 25px;    
+    margin-top: 100px;
+    border: 3px solid black;
 }
 
 .box1 {
     position: relative;
-    top: 100px;
+    top: 285px;
+    width: 150px;
+    left: 275px;
 }
 
 .box2 {
-    position: relative;
+    position: absolute;
     display: inline-block;
     height: 100px;
-    left: 200px;
-    top: 200px;
+    left: 300px;
+    top: 300px;
+    margin: auto;
 }
 
 .box3 {
     position: relative;
-    left: 0px;
-    top: 500px;
+    left: 600px;
+    width: 150px;
+    top: 180px;
 }
 
 #herohealth {
-    color: black;
+    position: relative;
+    color: white;
+    left: 50px;
+    top: 380px;
+    max-width: 380px;
+    float: left;
 }
 
 #enemyhealth {
-    color: black;
+    position: relative;
+    color: white;
+    left: -300px;
+    top: 380px;
+    max-width: 380px;
+    float: right;
 }
 
 .color1 {
@@ -77,4 +105,10 @@ body {
 .enemybox {
 
     background-color: red;
+}
+
+.attack {
+    position: relative;
+    left: 450px;
+    top: 25px;
 }
