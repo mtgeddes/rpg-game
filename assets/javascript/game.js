@@ -1,8 +1,8 @@
 $(document).ready(function() {
     // champions to pick from
-    var p1 = {hp: 160, ap: 6, cAp: 8};
+    var p1 = {hp: 160, ap: 6, cAp: 20};
     var p2 = {hp: 160, ap: 6, cAp: 8};
-    var p3 = {hp: 160, ap: 6, cAp: 8};
+    var p3 = {hp: 160, ap: 6, cAp: 20};
     var p4 = {hp: 160, ap: 6, cAp: 8};
 
     //Holds picks
@@ -53,11 +53,12 @@ $(document).ready(function() {
 
     //Click to make characters fight
     $(".attack").click(function() {
-        if (kills.length === 3) {
+        if (hero[0].hp <= 0) {
+            $(".box2").text("You lose!")  
+        }
+        else if (kills.length === 3) {
             $(".box2").text("You win!")
             $("#enemyinfo").text("")
-        }
-        else if (hero[0].hp <= 0) {
         }
         else if (enemy.length === 0) {
             $("#enemyinfo").text("Choose an opponent")
@@ -73,7 +74,13 @@ $(document).ready(function() {
                 $("#enemyinfo").text("Dead. Choose your next opponent")
                 $(".hidden").show()
                 $("#enemyhealth").css({"background-image": 'url("assets/images/hpbar0.png")', "transform": "scaleX(-1)"});
-                if (kills.length === 3) {
+                if (hero[0].hp <= 0) {
+                    $(".box2").text("You lose!")
+                    $("#enemyinfo").text("")
+                    $("#heroinfo").text("")
+                    $("#herohealth").css({"background-image": 'url("assets/images/hpbar0.png")'});
+                }
+                else if (kills.length === 3) {
                     $(".box2").text("You win!")
                     $("#enemyinfo").text("")
                 }
