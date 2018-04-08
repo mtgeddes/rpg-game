@@ -1,77 +1,101 @@
-
-
-// fix not being able to pick same char for hero and enemy
-//  
-
 $(document).ready(function() {
-    
-    
-    var p1 = {hp: 130, ap: 6, cAp: 8};
-    var p2 = {hp: 20, ap: 6, cAp: 8};
-    var p3 = {hp: 30, ap: 6, cAp: 8};
-    var p4 = {hp: 40, ap: 6, cAp: 8};
+   
+    var p1 = {hp: 160, ap: 6, cAp: 8};
+    var p2 = {hp: 160, ap: 6, cAp: 8};
+    var p3 = {hp: 160, ap: 6, cAp: 8};
+    var p4 = {hp: 160, ap: 6, cAp: 8};
 
-  
- 
     var hero = []
     var enemy = []
     var kills = []
+
+    var checkEnemyHp = function () {
+        if (enemy[0].hp <= 160 && enemy[0].hp >= 120) {
+            $("#enemyhealth").css({"background-image": 'url("assets/images/hpbar6.png")', "transform": "scaleX(-1)"});
+        }
+
+        else if (enemy[0].hp <= 120 && enemy[0].hp >= 80) {
+            $("#enemyhealth").css({"background-image": 'url("assets/images/hpbar4.png")', "transform": "scaleX(-1)"});
+        }
+
+        else if (enemy[0].hp <= 80 && enemy[0].hp >= 40) {
+            $("#enemyhealth").css({"background-image": 'url("assets/images/hpbar3.png")', "transform": "scaleX(-1)"});
+        }
+
+        else if (enemy[0].hp <= 40 && enemy[0].hp >= 0) {
+            $("#enemyhealth").css({"background-image": 'url("assets/images/hpbar1.png")', "transform": "scaleX(-1)"});
+        }
+    }
+
+    var checkUserHp = function () {
+        if (hero[0].hp <= 160 && hero[0].hp >= 120) {
+            $("#herohealth").css({"background-image": 'url("assets/images/hpbar6.png")'});
+        }
+
+        else if (hero[0].hp <= 120 && hero[0].hp >= 80) {
+            $("#herohealth").css({"background-image": 'url("assets/images/hpbar4.png")'});
+        }
+
+        else if (hero[0].hp <= 80 && hero[0].hp >= 40) {
+            $("#herohealth").css({"background-image": 'url("assets/images/hpbar3.png")'});
+        }
+
+        else if (hero[0].hp <= 40 && hero[0].hp >= 0) {
+            $("#herohealth").css({"background-image": 'url("assets/images/hpbar1.png")'});
+        }
+    }
   
     var attack = function () {
         enemy[0].hp = enemy[0].hp - hero[0].ap;
         hero[0].hp = hero[0].hp - enemy[0].cAp;
         hero[0].ap = hero[0].ap + 6
+        checkEnemyHp();
+        checkUserHp();
     }
-
- 
 
     $(".attack").click(function() {
         
         if (kills.length === 3) {
-            $("#herohealth").text("You win")
-            $("#enemyhealth").text("")
+            $("#heroinfo").text("You win")
+            $("#enemyinfo").text("")
         }
         else if (hero[0].hp <= 0) {
-            console.log("game over")
         }
 
         else if (enemy.length === 0) {
-            $("#enemyhealth").text("Choose an opponent")
+            $("#enemyinfo").text("Choose an opponent")
         }
 
         else {
             
             attack(); 
-            $("#herohealth").text("Hero HP: " + hero[0].hp)
-            $("#enemyhealth").text("Enemy HP: " + enemy[0].hp)
-            
-            console.log(enemy[0].hp); 
-            console.log(hero[0].hp);
+            $("#heroinfo").text("Hero HP: " + hero[0].hp + ". You attack for " + hero[0].ap)
+            $("#enemyinfo").text("Enemy HP: " + enemy[0].hp + ". Enemy attacks for " + enemy[0].cAp)
 
              if (enemy[0].hp <= 0) {
                 enemy = [];
                 kills.push("X")
-                console.log("enemy died")
                 $(".hide").hide()
-                
-                $("#enemyhealth").text("Dead. Choose your next opponent")
+                $("#enemyinfo").text("Dead. Choose your next opponent")
                 $(".hidden").show()
+                $("#enemyhealth").css({"background-image": 'url("assets/images/hpbar0.png")', "transform": "scaleX(-1)"});
+     
+
                 if (kills.length === 3) {
-                    $("#herohealth").text("You win")
-                    $("#enemyhealth").text("")
+                    $("#heroinfo").text("You win")
+                    $("#enemyinfo").text("")
                 }
             }
         }
-        
     })
 
     $("article").click(function() {
         var chosen = $(this);
         var enemyHp = function () {
-            $("#enemyhealth").text("Enemy HP: " + enemy[0].hp)
+            $("#enemyinfo").text("Enemy HP: " + enemy[0].hp)
         }
         var heroHp = function () {
-            $("#herohealth").text("Hero HP: " + hero[0].hp)
+            $("#heroinfo").text("Hero HP: " + hero[0].hp)
         }
 
         if (hero.length === 0) {
@@ -98,6 +122,7 @@ $(document).ready(function() {
         else if (enemy.length === 0) {
             chosen.appendTo(".enemybox")
             chosen.addClass("hide")
+            $("#enemyhealth").css({"background-image": 'url("assets/images/hpbar8.png")', "transform": "scaleX(-1)"});
             $(".hidden").hide()
             
             if (chosen.hasClass("p1")) {

@@ -1,17 +1,80 @@
 
 body {
+    background-color: rgba(24, 5, 9, 0.74);
     color: white;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 20px;
 }
 
+.center {
+    position: relative;
+    margin: auto;
+    max-width: 1000px;
+}
 
 .fightscenes {
+    text-align: center;
     position: relative;
-    display: inline-block;
     top: 60px;
-    left: 330px;
-    background-color: grey;
-    max-width: 295px;
+    background-color:  rgba(24, 5, 9, 0.911);
+    max-width: 620px;
     padding: 20px;
+    border: 3px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;   
+    margin: auto;
+}
+
+.fightscene1 {
+    background-image: url("../images/fire.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    margin: auto;
+    max-width: 200px;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;    
+    border: 1px solid black;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 42px;
+    text-shadow: 2px 2px black;
+}
+.fightscene2 {
+    background-image: url("../images/ship.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    margin: auto;
+    max-width: 200px;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;    
+    border: 1px solid black;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 42px;
+    text-shadow: 2px 2px black;
+}
+.fightscene3 {
+    background-image: url("../images/zen-temple-in-fall.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    margin: auto;
+    max-width: 200px;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;    
+    border: 1px solid black;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 42px;
+    text-shadow: 2px 2px black;
 }
 
 #wrapper {
@@ -34,40 +97,59 @@ body {
     top: 285px;
     width: 150px;
     left: 275px;
+    transform: scaleX(-1);
 }
 
 .box2 {
+    background-color: rgba(24, 5, 9, 0.74);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: absolute;
-    display: inline-block;
-    height: 100px;
-    left: 300px;
-    top: 300px;
+    height: 140px;
+    left: 290px;
+    top: 240px;
+    width: 450px;
     margin: auto;
+    border-radius: 25px;
 }
 
 .box3 {
     position: relative;
     left: 600px;
-    width: 150px;
-    top: 180px;
+    top: 280px;
+    max-width: 300px;
+    width: auto;
+    height: auto;
 }
 
 #herohealth {
+    background-image: url("../images/hpbar8.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     position: relative;
-    color: white;
+    color: black;
     left: 50px;
-    top: 380px;
-    max-width: 380px;
+    top: 20px;
+    width: 270px;
+    height: 30px;
     float: left;
+    border-radius: 15px;
+    border: 1px solid black;
 }
 
 #enemyhealth {
+    background-image: url("../images/hpbar8.png");
+    background-repeat: no-repeat;
+    transform: scaleX(-1);
+    background-size: 100% 100%;
     position: relative;
-    color: white;
-    left: -300px;
-    top: 380px;
-    max-width: 380px;
+    color: black;
+    left: -50px;
+    top: 20px;
+    width: 270px;
+    height: 30px;
     float: right;
+    border-radius: 15px;
+    border: 1px solid black;
 }
 
 .color1 {
@@ -76,39 +158,96 @@ body {
 
 .p1 {
     float: left;
-    height: 100px;
-    width: 100px;
-    background-color: darkblue;
+    background-image: url("../images/jhin.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 95px;
+    height: 130px;
 }
 
 .p2 {
+    background-image: url("../images/knight.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
     float: left;
-    height: 100px;
-    width: 100px;
-    background-color: blue;
+    height: 120px;
+    width: 120px;
+
 }
 
 .p3 {
+    background-image: url("../images/DarthVader.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
     float: left;
-    height: 100px;
-    width: 100px;
-    background-color: lightblue;
+    height: 120px;
+    width: 110px;
 }
 
 .p4 {
+    background-image: url("../images/student.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
     float: left;
-    height: 100px;
-    width: 100px;
-    background-color: blueviolet;
+    height: 120px;
+    width: 120px;
+
 }
 
 .enemybox {
-
     background-color: red;
 }
 
 .attack {
+    background-image: url("../images/fight.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:  rgba(231, 199, 172, 0.911);
+    color: white;
+    margin: auto;
+    max-width: 90px;
+    width: 100%;
+    height: 170px;
     position: relative;
-    left: 450px;
-    top: 25px;
+    left: 15px;
+    top: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 45px;    
+    border: 1px solid black;
+}
+
+.console {
+    background-color:  rgba(24, 5, 9, 0.911);
+    max-width: auto;
+    border: 3px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 25px;   
+    margin: auto;
+    height: 250px;
+}
+
+#heroinfo {
+    position: relative;
+    color: white;
+    text-align: center;
+    left: -220px;
+    top: 55px;
+    width: 270px;
+    height: auto;
+    float: left;
+    border-radius: 15px;
+    font-size: 42px;
+}
+
+#enemyinfo {
+    position: relative;
+    color: white;
+    text-align: center;
+    left: -50px;
+    top: 20px;
+    width: 270px;
+    height: auto;
+    float: right;
+    border-radius: 15px;
+    font-size: 42px;
 }

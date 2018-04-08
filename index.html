@@ -8,39 +8,42 @@
 
 
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
    </head>
 <body>
 
+<div class="center">
 
-
-    <div class="fightscenes">
-        <button class="fightscene1">Fight Scene1</button>
-        <button class="fightscene2">Fight Scene2</button>
-        <button class="fightscene3">Fight Scene3</button>
+    <div class="fightscenes"> 
+        <button class="fightscene1">House</button>
+        <button class="fightscene2">Boat</button>
+        <button class="fightscene3">Temple</button>
     </div>
     <div id="wrapper" >
         <div>
-
             <div class="box1">   
-                <article class="color1">Hero</article>
+                <article class="color1"></article>
             </div>
             <div class="box3">
-                <article class="enemybox">Enemy</article>
+                <article class="enemybox"></article>
             </div>
-            <div id="herohealth">hero health</div>
-            <div id="enemyhealth">enemy health</div>
         </div>
-    </div>   
-            <button class="attack"> attack! </button> 
-
-    <div class="box2 hidden">
-        <article class="p1">p1</article>
-        <article class="p2">p2</article>
-        <article class="p3">p3</article>
-        <article class="p4">p4</article>
     </div>
-    
+    <div class="console">   
+        
+        <div id="herohealth"></div>
+        <div id="enemyhealth"></div>
+        <div id="heroinfo"></div>
+        <div id="enemyinfo"></div>
+        <div class="attack"></div> 
+        <div class="box2 hidden">
+            <article class="p1"></article>
+            <article class="p2"></article>
+            <article class="p3"></article>
+            <article class="p4"></article>
+        </div>
+    </div>
+</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/javascript/game.js"></script>
