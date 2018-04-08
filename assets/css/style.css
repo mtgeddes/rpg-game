@@ -123,6 +123,14 @@ body {
     height: auto;
 }
 
+.herobox {
+    background-color: green;
+}
+
+.enemybox {
+    background-color: red;
+}
+
 #herohealth {
     background-image: url("../images/hpbar8.png");
     background-repeat: no-repeat;
@@ -152,52 +160,6 @@ body {
     float: right;
     border-radius: 15px;
     border: 1px solid black;
-}
-
-.color1 {
-    background-color: green;
-}
-
-.p1 {
-    float: left;
-    background-image: url("../images/jhin.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 95px;
-    height: 130px;
-}
-
-.p2 {
-    background-image: url("../images/knight.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    float: left;
-    height: 120px;
-    width: 120px;
-
-}
-
-.p3 {
-    background-image: url("../images/DarthVader.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    float: left;
-    height: 120px;
-    width: 110px;
-}
-
-.p4 {
-    background-image: url("../images/student.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    float: left;
-    height: 120px;
-    width: 120px;
-
-}
-
-.enemybox {
-    background-color: red;
 }
 
 .attack {
@@ -255,3 +217,42 @@ body {
     font-size: 42px;
     user-select: none;
 }
+
+.p1 {
+    float: left;
+    background-image: url("../images/jhin.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 95px;
+    height: 130px;
+}
+
+.p2 {
+    background-image: url("../images/knight.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    height: 120px;
+    width: 120px;
+
+}
+
+.p3 {
+    background-image: url("../images/DarthVader.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    height: 120px;
+    width: 110px;
+}
+
+.p4 {
+    background-image: url("../images/student.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    height: 120px;
+    width: 120px;
+
+}
+

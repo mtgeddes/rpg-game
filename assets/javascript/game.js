@@ -1,50 +1,48 @@
 $(document).ready(function() {
-   
+    // champions to pick from
     var p1 = {hp: 160, ap: 6, cAp: 8};
     var p2 = {hp: 160, ap: 6, cAp: 8};
     var p3 = {hp: 160, ap: 6, cAp: 8};
     var p4 = {hp: 160, ap: 6, cAp: 8};
 
+    //Holds picks
     var hero = []
     var enemy = []
     var kills = []
 
+    //Updates enemy health bar depending on health left.
     var checkEnemyHp = function () {
         if (enemy[0].hp <= 160 && enemy[0].hp >= 120) {
             $("#enemyhealth").css({"background-image": 'url("assets/images/hpbar6.png")', "transform": "scaleX(-1)"});
         }
-
         else if (enemy[0].hp <= 120 && enemy[0].hp >= 80) {
             $("#enemyhealth").css({"background-image": 'url("assets/images/hpbar4.png")', "transform": "scaleX(-1)"});
         }
-
         else if (enemy[0].hp <= 80 && enemy[0].hp >= 40) {
             $("#enemyhealth").css({"background-image": 'url("assets/images/hpbar3.png")', "transform": "scaleX(-1)"});
         }
-
         else if (enemy[0].hp <= 40 && enemy[0].hp >= 0) {
             $("#enemyhealth").css({"background-image": 'url("assets/images/hpbar1.png")', "transform": "scaleX(-1)"});
         }
     }
 
+    //Updates user health bar depending on health left.
     var checkUserHp = function () {
         if (hero[0].hp <= 160 && hero[0].hp >= 120) {
             $("#herohealth").css({"background-image": 'url("assets/images/hpbar6.png")'});
         }
-
         else if (hero[0].hp <= 120 && hero[0].hp >= 80) {
             $("#herohealth").css({"background-image": 'url("assets/images/hpbar4.png")'});
         }
-
         else if (hero[0].hp <= 80 && hero[0].hp >= 40) {
             $("#herohealth").css({"background-image": 'url("assets/images/hpbar3.png")'});
         }
-
         else if (hero[0].hp <= 40 && hero[0].hp >= 0) {
             $("#herohealth").css({"background-image": 'url("assets/images/hpbar1.png")'});
         }
     }
   
+    //Attack function to cause characters to fight
     var attack = function () {
         enemy[0].hp = enemy[0].hp - hero[0].ap;
         hero[0].hp = hero[0].hp - enemy[0].cAp;
@@ -53,25 +51,21 @@ $(document).ready(function() {
         checkUserHp();
     }
 
+    //Click to make characters fight
     $(".attack").click(function() {
-        
         if (kills.length === 3) {
             $(".box2").text("You win!")
             $("#enemyinfo").text("")
         }
         else if (hero[0].hp <= 0) {
         }
-
         else if (enemy.length === 0) {
             $("#enemyinfo").text("Choose an opponent")
         }
-
         else {
-            
             attack(); 
             $("#heroinfo").text("Hero HP: " + hero[0].hp + ". You attack for " + hero[0].ap)
             $("#enemyinfo").text("Enemy HP: " + enemy[0].hp + ". Enemy attacks for " + enemy[0].cAp)
-
              if (enemy[0].hp <= 0) {
                 enemy = [];
                 kills.push("X")
@@ -79,8 +73,6 @@ $(document).ready(function() {
                 $("#enemyinfo").text("Dead. Choose your next opponent")
                 $(".hidden").show()
                 $("#enemyhealth").css({"background-image": 'url("assets/images/hpbar0.png")', "transform": "scaleX(-1)"});
-     
-
                 if (kills.length === 3) {
                     $(".box2").text("You win!")
                     $("#enemyinfo").text("")
@@ -88,7 +80,8 @@ $(document).ready(function() {
             }
         }
     })
-
+    
+    //Click to choose character
     $("article").click(function() {
         var chosen = $(this);
         var enemyHp = function () {
@@ -99,8 +92,7 @@ $(document).ready(function() {
         }
 
         if (hero.length === 0) {
-            chosen.appendTo(".color1")
- 
+            chosen.appendTo(".herobox")
             if (chosen.hasClass("p1")) {
                 hero.push(p1)
                 heroHp();
@@ -144,14 +136,14 @@ $(document).ready(function() {
         }
     })
 
+
+    //Buttons to change background
     $(".fightscene1").click(function() {
         $("#wrapper").css({"background-image": 'url(assets/images/fire.gif)'});
     })
-
     $(".fightscene2").click(function() {
         $("#wrapper").css({"background-image": 'url(assets/images/ship.gif)'});
     })
-
     $(".fightscene3").click(function() {
         $("#wrapper").css({"background-image": 'url(assets/images/zen-temple-in-fall.gif)'});
     })
