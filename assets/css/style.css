@@ -3,7 +3,7 @@ body {
     color: white;
 }
 
-#wrapper {
+.wrapper {
     background-image: url();
     background-repeat: no-repeat;
     margin: auto;
@@ -22,59 +22,59 @@ body {
 
 .box2 {
     position: relative;
+    display: inline-block;
+    height: 100px;
     left: 200px;
     top: 200px;
 }
 
 .box3 {
     position: relative;
-    left: 310px;
-    top: 100px;
+    left: 0px;
+    top: 500px;
 }
 
-.box4 {
-    position: relative;
-    left: 420px;
-    top: 0px;
+#herohealth {
+    color: black;
 }
 
-.box5 {
-    position: relative;
-    left: 530px;
-    top: -100px;
+#enemyhealth {
+    color: black;
 }
 
-#color1 {
+.color1 {
     background-color: green;
 }
 
-#color2a {
+.p1 {
+    float: left;
     height: 100px;
     width: 100px;
     background-color: darkblue;
 }
 
-#color2b {
+.p2 {
+    float: left;
     height: 100px;
     width: 100px;
     background-color: blue;
 }
 
-#color2c {
+.p3 {
+    float: left;
     height: 100px;
     width: 100px;
     background-color: lightblue;
 }
 
-#color2d {
+.p4 {
+    float: left;
     height: 100px;
     width: 100px;
     background-color: blueviolet;
 }
 
-#color3 {
-    position: relative;
-    height: 100px;
-    width: 100px;
+.enemybox {
+
     background-color: red;
 }

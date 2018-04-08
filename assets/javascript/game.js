@@ -1,35 +1,117 @@
 
 
-// choose a player by clicking on picture
-// move the player when chosen when either attacker or defender
-// need attack button
-// removed when hp === 0.
-// Each character in the game has 3 attributes: Health Points, Attack Power and Counter Attack Power.
-// Each time the player attacks, their character's Attack Power increases by its base Attack Power.
-// Enemy only has a counterattacker
+// fix not being able to pick same char for hero and enemy
+//  
 
 $(document).ready(function() {
 
-    var charOne = {hp: 0, ap: 6, cAp: 8}
-    var charTwo = {hp: 0, ap: 6, cAp: 8}
-    var charThree = {hp: 0, ap: 6, cAp: 8}
-    var charFour = {hp: 0, ap: 6, cAp: 8}
-
+    
+    var p1 = {hp: 130, ap: 6, cAp: 8};
+    var p2 = {hp: 20, ap: 6, cAp: 8};
+    var p3 = {hp: 30, ap: 6, cAp: 8};
+    var p4 = {hp: 40, ap: 6, cAp: 8};
+ 
+    var hero = []
+    var enemy = []
+    var kills = []
+  
+    var attack = function () {
+        enemy[0].hp = enemy[0].hp - hero[0].ap;
+        hero[0].hp = hero[0].hp - enemy[0].cAp;
+        hero[0].ap = hero[0].ap + 6
+    }
 
     $("button").click(function() {
-        var chosen = $(this);
-        chosen.appendTo("#color1")
-            if (chosen === $("#color2a")) {
+        
+        if (kills.length === 3) {
+            $("#herohealth").text("You win")
+            $("#enemyhealth").text("")
+        }
+        else if (hero[0].hp <= 0) {
+            console.log("game over")
+        }
+
+        else if (enemy.length === 0) {
+            $("#enemyhealth").text("Choose an opponent")
+        }
+
+        else {
+            
+            attack(); 
+            $("#herohealth").text("Hero HP: " + hero[0].hp)
+            $("#enemyhealth").text("Enemy HP: " + enemy[0].hp)
+            
+            console.log(enemy[0].hp); 
+            console.log(hero[0].hp);
+
+             if (enemy[0].hp <= 0) {
+                enemy = [];
+                kills.push("X")
+                console.log("enemy died")
+                $(".hide").hide()
                 
-                charOne.hp = 100;
-                chosen.text("HP: " + charOne.hp)
+                $("#enemyhealth").text("Dead. Choose your next opponent")
+                $(".hidden").show()
+                if (kills.length === 3) {
+                    $("#herohealth").text("You win")
+                    $("#enemyhealth").text("")
+                }
             }
-
-            else {
-
-            }
+        }
+        
     })
 
+    $("article").click(function() {
+        var chosen = $(this);
+        var enemyHp = function () {
+            $("#enemyhealth").text("Enemy HP: " + enemy[0].hp)
+        }
+        var heroHp = function () {
+            $("#herohealth").text("Hero HP: " + hero[0].hp)
+        }
 
+        if (hero.length === 0) {
+            chosen.appendTo(".color1")
+ 
+            if (chosen.hasClass("p1")) {
+                hero.push(p1)
+                heroHp();
+            }
+            else if (chosen.hasClass("p2")) {
+                hero.push(p2)
+                heroHp();
+            }
+            else if (chosen.hasClass("p3")) {
+                hero.push(p3)
+                heroHp();
+            }
+            else if (chosen.hasClass("p4")) {
+                hero.push(p4)
+                heroHp();
+            }
+        } 
 
+        else if (enemy.length === 0) {
+            chosen.appendTo(".enemybox")
+            chosen.addClass("hide")
+            $(".hidden").hide()
+            
+            if (chosen.hasClass("p1")) {
+                enemy.push(p1);
+                enemyHp();
+            }
+            else if (chosen.hasClass("p2")) {
+                enemy.push(p2)
+                enemyHp();
+            }
+            else if (chosen.hasClass("p3")) {
+                enemy.push(p3)
+                enemyHp();
+            }
+            else if (chosen.hasClass("p4")) {
+                enemy.push(p4)
+                enemyHp();
+            }
+        }
+    })
 })
