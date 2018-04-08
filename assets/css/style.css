@@ -239,6 +239,7 @@ body {
     float: left;
     border-radius: 15px;
     font-size: 42px;
+    user-select: none;
 }
 
 #enemyinfo {
@@ -252,4 +253,5 @@ body {
     float: right;
     border-radius: 15px;
     font-size: 42px;
+    user-select: none;
 }
