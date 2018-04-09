@@ -1,6 +1,8 @@
 
 body {
-    background-color: rgba(24, 5, 9, 0.74);
+    background-image: url("../images/backgroundimg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
     font-family: 'East Sea Dokdo', cursive;
     font-size: 20px;
@@ -16,7 +18,7 @@ body {
     text-align: center;
     position: relative;
     top: 60px;
-    background-color:  rgba(24, 5, 9, 0.911);
+    background-color:  rgba(107,57,80, 0.911);
     max-width: 620px;
     padding: 20px;
     border: 3px solid black;
@@ -112,8 +114,16 @@ body {
     border-radius: 25px;
     font-size: 72px;
     text-align: center;
+    padding-top: 15px;
 }
 
+#instructions {
+    font-size: 50px;
+    position: absolute;
+    left: 90px;
+    top: -50px;
+    text-shadow: 2px 2px 4px #000000;
+}
 .box3 {
     position: relative;
     left: 600px;
@@ -132,7 +142,6 @@ body {
 }
 
 #herohealth {
-    background-image: url("../images/hpbar8.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: relative;
@@ -143,11 +152,11 @@ body {
     height: 30px;
     float: left;
     border-radius: 15px;
-    border: 1px solid black;
+
 }
 
 #enemyhealth {
-    background-image: url("../images/hpbar8.png");
+
     background-repeat: no-repeat;
     transform: scaleX(-1);
     background-size: 100% 100%;
@@ -159,7 +168,7 @@ body {
     height: 30px;
     float: right;
     border-radius: 15px;
-    border: 1px solid black;
+
 }
 
 .attack {
@@ -173,15 +182,21 @@ body {
     width: 100%;
     height: 170px;
     position: relative;
-    left: 15px;
-    top: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    left: 0px;
+    top: 30px;
+    box-shadow: 0 4px 8px 0 white, 0 6px 20px 0 white;
     border-radius: 45px;    
     border: 1px solid black;
+    
+}
+
+.attack:hover {
+    background-color:  rgba(255, 207, 167, 0.911);
+    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
 }
 
 .console {
-    background-color:  rgba(24, 5, 9, 0.911);
+    background-color:  rgba(107,57,80, 0.911);
     max-width: auto;
     border: 3px solid black;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
