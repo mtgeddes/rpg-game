@@ -5,7 +5,7 @@ An app demoing jQuery, HTML, Javascript, and CSS basics.
 * [Live-Demo](#live)
 
 ### <a name="demo">GIF-Demo
-![Burger App](/images/demo.gif)
+![Demo](/images/demo.gif)
 
 
 ## <a name="live"></a>Link to live
