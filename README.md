@@ -5,7 +5,7 @@ An app demoing jQuery, HTML, Javascript, and CSS basics.
 * [Live-Demo](#live)
 
 ### <a name="demo">GIF-Demo
-![Demo](/images/demo.gif)
+![Demo](/assets/images/demo.gif)
 
 
 ## <a name="live"></a>Link to live
